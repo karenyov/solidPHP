@@ -15,3 +15,15 @@ git clone https://github.com/karenyov/solidPHP.git
 ```shell
 composer install
 ```
+
+## Rodandos os Tests
+
+- No terminal na raíz do projeto:
+
+```shell
+vendor/bin/phpunit
+```
+
+
+# Anotações
+
