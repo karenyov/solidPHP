@@ -47,7 +47,7 @@ Algumas delas são:
 > nunca deve abrir uma classe e adicionar um novo recurso, você deverá estendê-la (Expansão e Fechado para alteração)
 
 - L: Liskov Substituition - As classes derivadas devem ser substituíveis por suas classes base, sem que resultem em erros.
-> subtipos e tipo devem se complementar
+> subtipos e tipo(pais e filhos) devem se complementar
 
 - I: Interface Segregation - Muitas interfaces específicas são melhores do que uma interface única.
 > sempre trabalhar com interface
