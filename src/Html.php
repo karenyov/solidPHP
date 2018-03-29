@@ -4,36 +4,21 @@ namespace Solid\Html;
 
 class Html
 {
-    public function img(string $src)
+    public function __call(string $name, $arguments)
     {
-        return '<img src="' . $src . '">';
+        return $this->createTags($name, $arguments);
     }
 
-    public function a(string $href , string $anchor)
+    public static function __callStatic(string $name, $arguments)
     {
-        $tag = new class {
+        return self::createTags($name, $arguments);
+    }
 
-            private $attributes;
+    public static function createTags(string $name , $arguments)
+    {
+        $class = 'Solid\Html\Tag\\' . ucfirst($name);
 
-            public function attribute(array $attributes)
-            {
-                $result = [];
-
-                foreach ($attributes as $key => $value)
-                {
-                    $result[] = $key . '="' . $value . '"';
-                }
-
-                $this->attributes =' ' . implode(' ' , $result);
-            }
-            public function __toString()
-            {
-                return '<a href="' . $this->href . '"' . $this->attributes . '>' . $this->anchor . '</a>';
-            }
-        };
-
-        $tag->href = $href;
-        $tag->anchor = $anchor;
-        return $tag;
+        $reflection = new \ReflectionClass($class);
+        return $reflection->newInstanceArgs($arguments);
     }
 }

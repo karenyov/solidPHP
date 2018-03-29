@@ -29,12 +29,21 @@ class HtmlTest extends \PHPUnit\Framework\TestCase
         $img = $html->img('img/photo.png');
 
         $a = $html->a('http://www.example.com.br', 'Meu Site');
-        $a->attribute([
+        $a->attributes([
             'class' => 'bt btn-default'
         ]);
 
         $this->assertEquals('<a href="http://www.example.com.br" class="bt btn-default">Meu Site</a>', $a);
     }
 
+    public function testCriarTagAComClassEIdComModoEstatico()
+    {
+        $a = Html::a('http://www.example.com.br', 'Meu Site');
+        $a->attributes([
+            'class'=>'btn btn-default'
+        ]);
+
+        $this->assertEquals('<a href="http://www.example.com.br" class="btn btn-default">Meu Site</a>', $a);
+    }
 
 }
