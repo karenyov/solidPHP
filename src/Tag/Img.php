@@ -19,6 +19,6 @@ class Img extends Tag
 
     public function __toString() : string
     {
-        return '<img src="' . $this->attrs[0] . '">';
+        return '<img src="' . $this->attrs[0] . '"' . $this->optional_attrs . '>';
     }
 }
