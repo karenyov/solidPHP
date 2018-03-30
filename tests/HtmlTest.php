@@ -5,7 +5,7 @@ namespace Solid\Html;
 class HtmlTest extends \PHPUnit\Framework\TestCase
 {
 
-    public function testCriarTagImgComSrc()
+    /*public function testCriarTagImgComSrc()
     {
         $html = new Html;
         $img = $html->img('img/photo.png');
@@ -44,6 +44,6 @@ class HtmlTest extends \PHPUnit\Framework\TestCase
         ]);
 
         $this->assertEquals('<a href="http://www.example.com.br" class="btn btn-default">Meu Site</a>', $a);
-    }
+    }*/
 
 }
